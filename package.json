@@ -1,0 +1,40 @@
+{
+  "name": "reload-man",
+  "version": "0.0.1",
+  "description": "liverealod for all script by creating proxy server",
+  "main": "index.js",
+  "preferGlobal": "true",
+  "bin": {
+    "reload-man": "index.js"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keith3/livereload-for-all.git"
+  },
+  "keywords": [
+    "livereload",
+    "proxy",
+    "server"
+  ],
+  "author": "lufeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keith3/livereload-for-all/issues"
+  },
+  "homepage": "https://github.com/keith3/livereload-for-all",
+  "devDependencies": {
+    "connect": "2.14.4",
+    "connect-inject": "0.3.2",
+    "http-proxy": "1.4.3",
+    "minimist": "^1.1.0",
+    "node-getopt": "^0.2.3",
+    "portscanner": "1.0.0",
+    "socket.io": "1.1.0"
+  }
+}
