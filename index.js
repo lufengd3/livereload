@@ -1,3 +1,12 @@
+/**
+ * reload-man - index.js
+ *
+ * Copyright(c) keith3.
+ * MIT Licensed
+ *
+ * Author:
+ *  lufeng <lufengd3@gmail.com> (http://lufeng.me)
+ */
 #! /usr/bin/env node
 var fs = require('fs')
   , open = require('open')
@@ -42,10 +51,10 @@ function setSocketServer() {
     // console.log(new Date() + 'Livereload server listening on ' + socketServerPort);
     
     fs.watch(docRoot, function(event, filename) {
-        if (event == 'change') {
-            console.log('File ' + filename + ' changed.');
-            socketServer.emit('reload')
-        }
+        //if (event == 'change') {
+        socketServer.emit('reload')
+        console.log(new Date().toUTCString() + ' File ' + filename + ' changed.');
+        //}
     });
 }
 
@@ -65,7 +74,7 @@ function setProxyServer() {
             proxyServer.web(req, res);
         }
     ).listen(proxyServerPort);
-    console.log(new Date() + 'Proxy server listening on ' + proxyServerPort);
+    console.log(new Date().toUTCString() + ' Proxy server listening on ' + proxyServerPort);
     open('http://localhost:' + proxyServerPort);
 }
 
