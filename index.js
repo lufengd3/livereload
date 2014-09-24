@@ -14,17 +14,6 @@ var fs = require('fs')
   , proxyServerPort = argv.P || 8090
   , docRoot = argv.D;
 
-if (argv.v) {
-    console.log(require('./package.json').version)
-    process.exit();
-}
-
-if (typeof docRoot == 'undefined') {
-    console.log('Miss the DocRoot, for example: livereload -D /var/www/foo');
-    process.exit();
-}
-
-
 /**
  * set cli option
  */
@@ -39,6 +28,11 @@ opt = require('node-getopt').create([
 .bindHelp()     // bind option 'help' to default action
 .parseSystem(); // parse command line
 
+if (argv.v) {
+    var pjson = require('./package.json');
+    console.log(pjson.name + '  Version ' + pjson.version)
+    process.exit();
+}
 
 /**
  * websocket server part
@@ -156,6 +150,10 @@ function checkParam(callback) {
 /**
  * start
  */
+if (typeof docRoot == 'undefined') {
+    console.log('Miss the DocRoot, for example: livereload -D /var/www/foo');
+    process.exit();
+}
 checkParam(function(result) {
     if (result) {
         setSocketServer();

@@ -1,6 +1,6 @@
 {
   "name": "reload-man",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "liverealod for all script by creating proxy server.",
   "main": "index.js",
   "preferGlobal": "true",
