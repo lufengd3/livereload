@@ -10,6 +10,8 @@ But now, by creating a proxy server, we can use livereload in back-end project, 
 
 Demo (http://youtu.be/DOVaulGDIVM)
 
+![img](assets/reload-man.gif)
+
 ## Installation
 
 ### Node.js
@@ -25,11 +27,11 @@ $ reload-man -D /var/www
 
 ### Options
 ```
-**-D**  http server\'s docRoot, no default value
-**-H**  http server port, default port is 80
-**-P**  proxy server port, default port is 8090
-**-S**  websocket server port, default port is 31396
-**-v**  show version
+-D  http server\'s docRoot, no default value
+-H  http server port, default port is 80
+-P  proxy server port, default port is 8090
+-S  websocket server port, default port is 31396
+-v  show version
 ```
 
 ## License
