@@ -1,14 +1,14 @@
 reload-man
 ==================
-livereload-for-all
+Livereload for all.
 
 ### 
 
-Usually livereload is just use by front-end developer.
+Usually livereload is just used by front-end developer.
 
 But now, by creating a proxy server, we can use livereload in back-end project, such as PHP, Python, Ruby ...
 
-For example
+Demo (http://youtu.be/DOVaulGDIVM)
 
 ## Installation
 
