@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 var fs = require('fs')
+  , open = require('open')
   , argv = require('minimist')(process.argv.slice(2))
   , net = require('net')
   , socket = require('socket.io')
@@ -44,10 +45,13 @@ opt = require('node-getopt').create([
  */
 function setSocketServer() {
     socketServer = socket.listen(socketServerPort); 
-    console.log(new Date() + 'Livereload server listening on ' + socketServerPort);
+    // console.log(new Date() + 'Livereload server listening on ' + socketServerPort);
     
-    fs.watch(docRoot, function() {
-        socketServer.emit('reload')
+    fs.watch(docRoot, function(event, filename) {
+        if (event == 'change') {
+            console.log('File ' + filename + ' changed.');
+            socketServer.emit('reload')
+        }
     });
 }
 
@@ -68,6 +72,7 @@ function setProxyServer() {
         }
     ).listen(proxyServerPort);
     console.log(new Date() + 'Proxy server listening on ' + proxyServerPort);
+    open('http://localhost:' + proxyServerPort);
 }
 
 /**
