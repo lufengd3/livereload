@@ -10,7 +10,7 @@ But now, by creating a proxy server, we can use livereload in back-end project, 
 
 Demo (http://youtu.be/mVdZHczIBBU?list=UU4qA_vJf2NXOFLznWmTKnxw)
 
-< iframe title="YouTube video player" width="480" height="390" src="http://webtest.qiniudn.com/reload-man.mp4" frameborder="0" allowfullscreen>< /iframe>
+![img](assets/reload-man.gif)
 
 ## Installation
 
