@@ -8,7 +8,7 @@ Usually livereload is just used by front-end developer.
 
 But now, by creating a proxy server, we can use livereload in back-end project, such as PHP, Python, Ruby ...
 
-Demo (http://youtu.be/mVdZHczIBBU?list=UU4qA_vJf2NXOFLznWmTKnxw)
+Demo (http://webtest.qiniudn.com/reload-man.mp4)
 
 ![img](assets/reload-man.gif)
 
