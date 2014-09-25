@@ -10,7 +10,7 @@ But now, by creating a proxy server, we can use livereload in back-end project, 
 
 Demo (http://youtu.be/mVdZHczIBBU?list=UU4qA_vJf2NXOFLznWmTKnxw)
 
-![img](http://webtest.qiniudn.com/reload-man.mp4)
+<video src=http://webtest.qiniudn.com/reload-man.mp4 preload></video>
 
 ## Installation
 
