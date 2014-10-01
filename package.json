@@ -1,6 +1,6 @@
 {
   "name": "reload-man",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "liverealod cli tools for server side language",
   "main": "index.js",
   "preferGlobal": "true",

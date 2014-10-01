@@ -49,7 +49,7 @@ function setSocketServer() {
     //     //}
     // });
     watch(docRoot, function(filename) {
-        if (filename.substr(filename.lastIndexOf('.')) !== '.swp') {
+        if (filename.substr(filename.lastIndexOf('.')) !== '.swp' && filename.substr(-1) !== '~') {
             socketServer.emit('reload')
             console.log(new Date().toUTCString() + ' File ' + filename + ' changed.');
         }

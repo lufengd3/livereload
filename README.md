@@ -14,10 +14,10 @@ Demo (http://webtest.qiniudn.com/reload-man.mp4)
 
 ## Installation
 
-### Node.js
+Actually this is a node packaged module
+You've to [install node.js](http://nodejs.org/download/) first
+
 ```bash
-// Actually this is a node packaged module
-// You've to [install node.js](http://nodejs.org/download/) first
 $ sudo npm install -g reload-man
 ```
 
