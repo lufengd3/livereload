@@ -7,7 +7,7 @@ var fs = require('fs')
   , proxy = require('http-proxy')
   , connect = require('connect')
   , injector = require('connect-inject')
-  , gaze = require('gaze')
+  , watch = require('node-watch')
   , portscanner = require('portscanner')
   , httpServer, socketServer, proxyServer
   , httpServerPort = argv.H || 80
@@ -48,11 +48,11 @@ function setSocketServer() {
     //     console.log(new Date().toUTCString() + ' File ' + filename + ' changed.');
     //     //}
     // });
-    gaze(docRoot + '**/*', function(err, watcher) {
-        this.on('all', function(event, filepath) {
+    watch(docRoot, function(filename) {
+        if (filename.substr(filename.lastIndexOf('.')) !== '.swp') {
             socketServer.emit('reload')
-            console.log(new Date().toUTCString() + ' File ' + filepath + ' changed.');
-        })
+            console.log(new Date().toUTCString() + ' File ' + filename + ' changed.');
+        }
     });
 }
 
@@ -160,9 +160,9 @@ function checkParam(callback) {
 if (typeof docRoot == 'undefined') {
     console.log('Miss the DocRoot, for example: livereload -D /var/www/foo');
     process.exit();
-} else {
-    // docRoot must end with '/' for gaze
-    docRoot.substr(-1) == '/' ? '' : docRoot += '/';
+} else if (! fs.existsSync(docRoot)) {
+    console.log('Error: ' + docRoot + ' doesn\'t exists.');
+    process.exit();
 }
 
 checkParam(function(result) {
