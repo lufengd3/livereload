@@ -1,7 +1,7 @@
 {
   "name": "reload-man",
-  "version": "0.0.4",
-  "description": "liverealod for all script by creating proxy server.",
+  "version": "0.0.6",
+  "description": "liverealod cli tools for server side language",
   "main": "index.js",
   "preferGlobal": "true",
   "bin": {
@@ -31,6 +31,7 @@
   "dependencies": {
     "connect": "2.14.4",
     "connect-inject": "0.3.2",
+    "gaze": "^0.6.4",
     "http-proxy": "1.4.3",
     "minimist": "1.1.0",
     "node-getopt": "0.2.3",

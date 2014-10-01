@@ -1,6 +1,6 @@
 reload-man
 ==================
-Livereload for all.
+Livereload cli tools.
 
 ### 
 
@@ -16,6 +16,8 @@ Demo (http://webtest.qiniudn.com/reload-man.mp4)
 
 ### Node.js
 ```bash
+// Actually this is a node packaged module
+// You've to [install node.js](http://nodejs.org/download/) first
 $ sudo npm install -g reload-man
 ```
 

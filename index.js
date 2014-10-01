@@ -1,12 +1,3 @@
-/**
- * reload-man - index.js
- *
- * Copyright(c) keith3.
- * MIT Licensed
- *
- * Author:
- *  lufeng <lufengd3@gmail.com> (http://lufeng.me)
- */
 #! /usr/bin/env node
 var fs = require('fs')
   , open = require('open')
@@ -16,6 +7,7 @@ var fs = require('fs')
   , proxy = require('http-proxy')
   , connect = require('connect')
   , injector = require('connect-inject')
+  , gaze = require('gaze')
   , portscanner = require('portscanner')
   , httpServer, socketServer, proxyServer
   , httpServerPort = argv.H || 80
@@ -50,11 +42,17 @@ function setSocketServer() {
     socketServer = socket.listen(socketServerPort); 
     // console.log(new Date() + 'Livereload server listening on ' + socketServerPort);
     
-    fs.watch(docRoot, function(event, filename) {
-        //if (event == 'change') {
-        socketServer.emit('reload')
-        console.log(new Date().toUTCString() + ' File ' + filename + ' changed.');
-        //}
+    // fs.watch(docRoot, function(event, filename) {
+    //     //if (event == 'change') {
+    //     socketServer.emit('reload')
+    //     console.log(new Date().toUTCString() + ' File ' + filename + ' changed.');
+    //     //}
+    // });
+    gaze(docRoot + '**/*', function(err, watcher) {
+        this.on('all', function(event, filepath) {
+            socketServer.emit('reload')
+            console.log(new Date().toUTCString() + ' File ' + filepath + ' changed.');
+        })
     });
 }
 
@@ -162,7 +160,11 @@ function checkParam(callback) {
 if (typeof docRoot == 'undefined') {
     console.log('Miss the DocRoot, for example: livereload -D /var/www/foo');
     process.exit();
+} else {
+    // docRoot must end with '/' for gaze
+    docRoot.substr(-1) == '/' ? '' : docRoot += '/';
 }
+
 checkParam(function(result) {
     if (result) {
         setSocketServer();
