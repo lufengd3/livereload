@@ -10,11 +10,12 @@ But now, by creating a proxy server, we can use livereload in back-end project, 
 
 Demo (http://webtest.qiniudn.com/reload-man.mp4)
 
-![img](assets/reload-man.gif)
+![img](http://webtest.qiniudn.com/reload-man.gif)
 
 ## Installation
 
 Actually this is a node packaged module
+
 You've to [install node.js](http://nodejs.org/download/) first
 
 ```bash
