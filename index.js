@@ -158,7 +158,7 @@ function checkParam(callback) {
  * start
  */
 if (typeof docRoot == 'undefined') {
-    console.log('Miss the DocRoot, for example: livereload -D /var/www/foo');
+    console.log('Miss the DocRoot, for example: reload-man -D /var/www/foo');
     process.exit();
 } else if (! fs.existsSync(docRoot)) {
     console.log('Error: ' + docRoot + ' doesn\'t exists.');
