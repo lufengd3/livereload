@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/keith3/livereload-for-all.git"
+    "url": "https://github.com/lufengd3/livereload-for-all.git"
   },
   "keywords": [
     "livereload",
@@ -25,18 +25,18 @@
   "author": "lufeng",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/keith3/livereload-for-all/issues"
+    "url": "https://github.com/lufengd3/livereload-for-all/issues"
   },
-  "homepage": "https://github.com/keith3/livereload-for-all",
+  "homepage": "https://github.com/lufengd3/livereload-for-all",
   "dependencies": {
-    "connect": "2.14.4",
-    "connect-inject": "0.3.2",
-    "http-proxy": "1.4.3",
-    "minimist": "1.1.0",
-    "node-getopt": "0.2.3",
-    "node-watch": "0.3.4",
-    "open": "0.0.5",
-    "portscanner": "1.0.0",
-    "socket.io": "1.1.0"
+    "connect": "*",
+    "connect-inject": "*",
+    "http-proxy": "^1.4.3",
+    "minimist": "^1.1.0",
+    "node-getopt": "^0.2.3",
+    "node-watch": "^0.3.4",
+    "open": "^0.0.5",
+    "portscanner": "^1.0.0",
+    "socket.io": "^1.1.0"
   }
 }
